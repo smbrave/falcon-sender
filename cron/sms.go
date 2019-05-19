@@ -35,7 +35,7 @@ func SendSms(sms *model.Sms) {
 	}()
 
 	url := g.Config().Api.Sms
-	r := httplib.Post(url).SetTimeout(5*time.Second, 2*time.Minute)
+	r := httplib.Post(url).Header("ak", g.Config().Ak).SetTimeout(5*time.Second, 2*time.Minute)
 	r.Param("tos", sms.Tos)
 	r.Param("content", sms.Content)
 	resp, err := r.String()

@@ -39,6 +39,7 @@ type GlobalConfig struct {
 	Queue  *QueueConfig  `json:"queue"`
 	Worker *WorkerConfig `json:"worker"`
 	Api    *ApiConfig    `json:"api"`
+	Ak string `json:"ak"`
 }
 
 var (
